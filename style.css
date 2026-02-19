@@ -70,6 +70,11 @@ body {
     margin: 0 auto;  /*prvo je za gore-dolje drugo za lijevo-desno*/
     padding: 0 50px;
 }
+.navbar_brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between logo and title */
+}
 /*ovo je id pa ide #*/
 #navbar_logo{
     color: var(--silver);    
@@ -78,6 +83,16 @@ body {
     height: 80px;
     width: auto;
     transition: height 0.3s ease;
+}
+.title_cont{
+    font-size: clamp(20px, 2.5vw, 32px); /* scales with viewport */
+    font-weight: 800;
+    color: var(--silver);
+    margin-left: 12px; /* spacing between logo and title */
+    white-space: nowrap; /* prevents breaking into multiple lines */
+    line-height: 1;
+    display: flex;
+    align-items: center; /* vertical align with logo */
 }
 .navbar_menu{
     display: flex;
@@ -111,6 +126,9 @@ body {
 }
 .navbar-scrolled #navbar_logo img{
     height: 75px;
+}
+.navbar-scrolled .title_cont{
+    font-size: clamp(18px, 2vw, 28px);
 }
 .navbar_btn{
     display: flex;
@@ -386,6 +404,9 @@ body {
         max-width: 1300px;
         padding: 0 20px;
     }
+    .title_cont{
+        font-size: clamp(16px, 3vw, 24px);
+    }
     .navbar-scrolled,
     .navbar_menu.active{
         background: var(--primary-dark);
@@ -581,11 +602,25 @@ body {
     .navbar_container{
         padding: 0 15px;
     }
+    .navbar_container{
+        justify-content: center;
+    }
     #navbar_logo img{
         height: 40px;
     }
     .navbar_links{
         font-size: 16px;
+    }
+    .title_cont{
+        font-size: clamp(14px, 4vw, 20px);
+        margin-left: 8px;
+    }
+    .navbar_menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        text-align: center;
     }
     .main_container{
         padding: 40px 15px;
