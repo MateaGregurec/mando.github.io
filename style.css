@@ -13,7 +13,7 @@
     margin : 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    transition: all 0.25s ease;
+   /* transition: all 0.25s ease;*/
 }
 html {
   scroll-behavior: smooth;
@@ -22,6 +22,13 @@ body {
   background: var(--silver);
   color: var(--primary-dark);
   line-height: 1.6;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page_content{
+    flex: 1;
 }
 .main_container,
 .other_card {
@@ -39,6 +46,19 @@ body {
     position: sticky;   /*ostaje */
     top: 0;
     z-index: 999;  /*pretjerano, ali osigurava da ce biti iznad svega*/
+    transition: all 0.35s ease;
+}
+.navbar-scrolled {
+  background: rgba(23, 54, 77, 0.95); /* primary-dark with transparency */
+  backdrop-filter: blur(10px);
+  height: 70px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.navbar-scrolled #navbar_logo img{
+    height: 40px;
+}
+.navbar-scrolled .navbar_links{
+    font-size: 17px;
 }
 .navbar_container {
     display: flex;
@@ -142,7 +162,7 @@ body {
     padding-right: 40px;
 }
 .main_content h1{
-    font-size: 64px;
+    font-size: clamp(32px, 5vw, 64px);
     color: var(--primary);
     background-size: 100%;
 }
@@ -163,12 +183,14 @@ body {
     font-size: 16px;
     padding: 14px 32px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     background: var(--primary);
     color: var(--silver);
     margin-top: 32px;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .main_btn a {
     position: relative;
@@ -189,7 +211,8 @@ body {
     border-radius: 4px;
 }
 .main_btn:hover {
-    color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(34, 76, 107, 0.25);
 }
 .main_btn:hover:after {
     width: 100%;
@@ -334,6 +357,18 @@ body {
     .footer_container{
         padding: 20px 30px;
     }
+    #footer_logo{
+        margin-bottom: 32px;
+    }
+    .footer_around{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+    .footer_logo{
+        margin-bottom: 10px;
+    }
 }
 /*srednji zaslon*/
 @media screen and (max-width: 960px){
@@ -346,14 +381,30 @@ body {
         max-width: 1300px;
         padding: 0 20px;
     }
+    .navbar-scrolled,
+    .navbar_menu.active{
+        background: var(--primary-dark);
+        backdrop-filter: none;
+    }
     .navbar_menu{
+        left: 0;
+        right: 0;
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
         position: absolute;
-        top: -1000px;
+        top: 80px;
         opacity: 0;
         background: var(--primary);
+    }
+    .navbar_menu li{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar_menu a{
+        width: 100%;
+        display: block;
+        padding: 20px 0;
     }
     .navbar_menu.active {
         top: 100%;
@@ -381,6 +432,14 @@ body {
         font-size: 18px;
         width: 100%;
         display: table;
+    }
+    .navbar_links::after{
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .navbar_links:hover::after{
+        width: 40%;
     }
     #mobile-menu{
         position: absolute;
@@ -422,7 +481,9 @@ body {
     }
     .main_content{
         padding-right: 0;
+        width: 100%;
         margin-bottom: 64px;
+        margin-left: 0;
     }
     .main_content h1{
         font-size: 40px;
@@ -559,4 +620,14 @@ body {
     .footer_logo{
         font-size: 12px;
     }
+}
+.fade-in{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show{
+    opacity: 1;
+    transform: translateY(0);
 }
