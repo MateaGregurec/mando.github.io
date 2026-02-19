@@ -1,10 +1,9 @@
 /* na ovo cemo se reffati stalno, neka budu konstantne boje*/
-:root {                        
+:root{                        
   --primary: #224C6B;        /*main brand color*/
   --primary-dark: #17364D;   /*navbar scroll, hover, shadows */
   --white: #ffffff;
   --accent: #FF6F61;         /*CTAs, highlights*/
-  --accent-dark: #E85C50;    /*hover states*/
   --teal: #2AB7CA;           /*links, secondary highlights*/
   --teal-dark: #1B8C97;      /*hover links or icons*/
   --silver: #D6D9DB;         /*backgrounds */
@@ -15,20 +14,20 @@
   --info: #17A2B8;           /* Informational highlights */
 }
 /*all*/      
-* {
+*{
     box-sizing: border-box;
     margin : 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
-html {
+html{
   scroll-behavior: smooth;
 }
-body {
+body{
   background: var(--silver);
   color: var(--primary-dark);
   line-height: 1.6;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -36,8 +35,7 @@ body {
 .page_content{
     flex: 1;
 }
-.main_container,
-.other_card {
+.main_container, .other_card{
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);;
 }
 /*NAVBAR*/
@@ -54,7 +52,7 @@ body {
     z-index: 999;  /*pretjerano, ali osigurava da ce biti iznad svega*/
     transition: all 0.35s ease;
 }
-.navbar-scrolled {
+.navbar-scrolled{
   background: rgba(23, 54, 77, 0.95); /* primary-dark with transparency */
   backdrop-filter: blur(10px);
   height: 70px;
@@ -66,7 +64,7 @@ body {
 .navbar-scrolled .navbar_links{
     font-size: 17px;
 }
-.navbar_container {
+.navbar_container{
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -76,7 +74,7 @@ body {
     margin: 0 auto;  /*prvo je za gore-dolje drugo za lijevo-desno*/
     padding: 0 50px;
 }
-.navbar_brand {
+.navbar_brand{
     display: flex;
     align-items: center;
     gap: 12px; /* space between logo and title */
@@ -116,10 +114,9 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    text-decoration: none;
     padding: 0 16px;
     height: 100%;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
 }
 .navbar_links::after{
@@ -137,18 +134,10 @@ body {
 .navbar-scrolled .title_cont{
     font-size: clamp(18px, 2vw, 28px);
 }
-.navbar_btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 16px;
-    width: 100%;
-}
 .button{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     padding: 10px 20px;
     height: 100%;
     width: 100%;
@@ -158,10 +147,10 @@ body {
     background: #f77;
     color: #fff;
 }
-.button:hover {
+.button:hover{
     background: var(--silver-dark);
 }
-.navbar_links:hover {
+.navbar_links:hover{
     color: var(--white);
     background: var(--primary-dark);
 }
@@ -188,7 +177,7 @@ body {
     max-width: 1300px;
     padding: 60px 50px;
 }
-.main_content {
+.main_content{
     width: 100%;
     padding-right: 40px;
 }
@@ -224,14 +213,13 @@ body {
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.main_btn a {
+.main_btn a{
     position: relative;
     z-index: 2;
     color: var(--silver);
-    text-decoration: none;
     font-weight: 700;
 }
-.main_btn:after {
+.main_btn:after{
     position: absolute;
     content: '';
     top: 0;
@@ -242,11 +230,11 @@ body {
     opacity: 30%;
     border-radius: 4px;
 }
-.main_btn:hover {
+.main_btn:hover{
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(34, 76, 107, 0.3);
 }
-.main_btn:hover:after {
+.main_btn:hover:after{
     width: 100%;
 }
 .main_img-container{
@@ -256,11 +244,11 @@ body {
     transform: scale(1.075) ; /*increase the size*/
     cursor: pointer;
 }
-#main_img {
+#main_img{
     height: 60%;
     width: 60%;
 }
-.other {
+.other{
     background: var(--silver);
     display: flex;
     flex-direction: column;
@@ -324,6 +312,8 @@ body {
     color: var(--silver);
     padding: 40px 50px;
     font-size: 14px;
+    position: relative;
+    z-index: 10;
 }
 .footer_inner{
     display: flex;
@@ -338,64 +328,60 @@ body {
     font-weight: 800;
     font-size: 20px;
     color: var(--silver);
-    text-decoration: none;
 }
-.footer_brand p {
+.footer_brand p{
     margin-top: 8px;
     color: var(--gray-light);
 }
-.footer_nav, .footer_social, .footer_contact {
+.footer_nav, .footer_social, .footer_contact{
     flex: 1 1 180px;
 }
-.footer_nav h4, .footer_social h4, .footer_contact h4 {
+.footer_nav h4, .footer_social h4, .footer_contact h4{
     font-weight: 700;
     margin-bottom: 12px;
     color: var(--accent);
 }
-.footer_nav ul {
+.footer_nav ul{
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
-.footer_nav ul li {
+.footer_nav ul li{
     margin-bottom: 8px;
+    width: 100%;
 }
-.footer_nav a {
+.footer_nav a{
     color: var(--silver);
-    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding: 6px 0;
     transition: color 0.3s ease;
 }
-
-.footer_nav a:hover {
-    color: var(--accent);
+.footer_nav a:hover{
+    color: var(--teal);
 }
-
-.footer_social .social_icon {
-    display: inline-block;
+.footer_social .social_icon{
+    display: grid;
     margin-right: 12px;
     font-size: 20px;
     color: var(--silver);
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
-.footer_social .social_icon:hover {
+.footer_social .social_icon:hover{
     color: var(--teal);
     transform: translateY(-3px);
 }
-
-.footer_contact p {
+.footer_contact p{
     margin-bottom: 6px;
     color: var(--gray-light);
 }
-
-.footer_bottom {
+.footer_bottom{
     margin-top: 30px;
     text-align: center;
     border-top: 1px solid var(--gray);
     padding-top: 20px;
     font-size: 13px;
     color: var(--gray-light);
-}
-.footer_around{
-    display: flex;
 }
 /*960-1200px*/
 @media screen and (min-width: 961px) and (max-width: 1200px){
@@ -436,14 +422,11 @@ body {
     #footer_logo{
         margin-bottom: 32px;
     }
-    .footer_around{
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
-    }
     .footer_logo{
         margin-bottom: 10px;
+    }
+    .footer_nav a:hover{
+        color: var(--teal);
     }
 }
 /*srednji zaslon*/
@@ -460,8 +443,7 @@ body {
     .title_cont{
         font-size: clamp(16px, 3vw, 24px);
     }
-    .navbar-scrolled,
-    .navbar_menu.active{
+    .navbar-scrolled, .navbar_menu.active{
         background: var(--primary-dark);
         backdrop-filter: none;
     }
@@ -488,13 +470,13 @@ body {
         display: block;
         padding: 20px 0;
     }
-    .navbar_menu.active {
+    .navbar_menu.active{
         top: 100%;
         opacity: 1;
         height: auto;  /*viewpoint height, px = vh * viewport height/100, viewport je koliko je px na zaslonu trenutno vidljivo*/
         padding: 20px 0;
     }
-    #navbar_logo {
+    #navbar_logo{
         padding-left: 25px;
     }
     .navbar_toggle .bar{
@@ -529,9 +511,6 @@ body {
         right: 5%;
         transform: translateY(-50%); /*odradi translaciju 5% desno, 20% dolje*/
     }
-    .navbar_btn{
-        padding-bottom: 32px;
-    }
     .button{
         display: flex;
         justify-content: center;
@@ -540,13 +519,13 @@ body {
         height: 80px;
         margin: 0;
     }
-    #mobile-menu.is-active .bar:nth-child(2) {
+    #mobile-menu.is-active .bar:nth-child(2){
         opacity: 0;
     }
-    #mobile-menu.is-active .bar:nth-child(1) {
+    #mobile-menu.is-active .bar:nth-child(1){
         transform: translateY(8px) rotate(45deg);
     }
-    #mobile-menu.is-active .bar:nth-child(3) {
+    #mobile-menu.is-active .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
     }
     .main_container{
@@ -576,7 +555,7 @@ body {
         margin: 20px auto;
         font-size: 18px;
     }
-    .main_btn {
+    .main_btn{
         margin: 20px auto;
     }
     #main_img{
@@ -584,7 +563,7 @@ body {
         height: auto;
         margin-top: 40px;
     }
-    .other {
+    .other{
         height: auto;
         padding: 80px 20px;
     }
@@ -594,6 +573,42 @@ body {
     .other_card{
         width: 100%;
         max-width: 400px;
+    }
+    .footer_container{
+        position: relative;
+        text-align: center;
+        z-index: 10; /* make sure footer is above everything else */
+    }
+    .footer_inner{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer_nav, .footer_social, .footer_contact{
+        flex: unset;
+        width: 100%; /* full-width blocks */
+    }
+    .footer_nav ul{
+        width: 100%;
+        text-align: center;
+    }
+    .footer_nav ul li{
+        margin-bottom: 12px;
+    }
+    .footer_nav a{
+        display: inline-block; /* makes the link fully clickable */
+        width: 100%;
+        padding: 10px 0; /* optional: makes tapping easier on mobile */
+    }   
+    .footer_social{
+        text-align: center;
+    }
+    .footer_contact{
+        text-align: center;
+    }
+    .footer_nav a:hover{
+        color: var(--teal);
     }
 }
 /*mali laptop ili tablet*/
@@ -633,14 +648,17 @@ body {
     .other h1{
         font-size: 28px;
     }
-    .footer_inner {
+    .footer_inner{
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 20px;
     }
-    .footer_nav, .footer_social, .footer_contact {
+    .footer_nav, .footer_social, .footer_contact{
         flex: unset;
+    }
+    .footer_nav a:hover{
+        color: var(--teal);
     }
 }
 /*mobitel*/
@@ -661,7 +679,7 @@ body {
         font-size: clamp(14px, 4vw, 20px);
         margin-left: 8px;
     }
-    .navbar_menu {
+    .navbar_menu{
         position: absolute;
         top: 80px;
         left: 0;
@@ -689,7 +707,7 @@ body {
     #main_img{
         width: 100%;
     }
-    .other {
+    .other{
         height: 100%;
     }
     .other_container{
@@ -697,7 +715,6 @@ body {
     }
     .other h1{
         font-size: 24px;
-
     }
     .other_card{
         width: 100%;
@@ -707,7 +724,10 @@ body {
         padding: 20px 10px;
     }
     .footer_logo{
-        font-size: 12px;
+        font-size: 16px;
+    }
+    .footer_nav a:hover{
+        color: var(--teal);
     }
 }
 .fade-in{
@@ -716,7 +736,6 @@ body {
     transition: opacity 0.8s ease, transform 0.8s ease;
     will-change: opacity, transform;
 }
-
 .fade-in.show{
     opacity: 1;
     transform: translateY(0);
