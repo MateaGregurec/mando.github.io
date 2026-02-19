@@ -75,7 +75,9 @@ body {
     color: var(--silver);    
 }
 #navbar_logo img{
-    height: 48px;
+    height: 80px;
+    width: auto;
+    transition: height 0.3s ease;
 }
 .navbar_menu{
     display: flex;
@@ -106,6 +108,9 @@ body {
   height: 2px;
   background: var(--silver);
   transition: 0.3s;
+}
+.navbar-scrolled #navbar_logo img{
+    height: 75px;
 }
 .navbar_btn{
     display: flex;
@@ -150,7 +155,7 @@ body {
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: 90vh;
+    min-height: 90vh;
     background-color: var(--white);
     z-index: 1;
     width: 100%;
@@ -385,6 +390,9 @@ body {
     .navbar_menu.active{
         background: var(--primary-dark);
         backdrop-filter: none;
+    }
+    .navbar-scrolled #navbar_logo img{
+        height: 75px;
     }
     .navbar_menu{
         left: 0;
@@ -625,6 +633,7 @@ body {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
 }
 
 .fade-in.show{
