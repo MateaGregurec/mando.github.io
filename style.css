@@ -685,8 +685,16 @@ body{
         left: 0;
         width: 100%;
         text-align: center;
+        opacity: 0;
+    }
+    .navbar_menu.active{
+        opacity: 1;
+        top: 80px;
     }
     .main_container{
+        .main_container{
+            min-height: auto;
+        }
         padding: 40px 15px;
     }
     .main_content h1{
@@ -702,6 +710,7 @@ body{
     .main_btn{
         font-size: 14px;
         padding: 12px 24px;
+        max-width: 300px;
         width: 100%;
     }
     #main_img{
