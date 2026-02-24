@@ -12,6 +12,7 @@
   --gray: #C4C4C4;           /* Divider lines, muted elements */
   --gray-dark: #7A7A7A;      /*Secondary text, muted info */
   --info: #17A2B8;           /* Informational highlights */
+  --green: rgb(0, 189, 0);
 }
 /*all*/      
 *{
@@ -339,7 +340,7 @@ body{
 .footer_nav h4, .footer_social h4, .footer_contact h4{
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--accent);
+    color: var(--green);
 }
 .footer_nav ul{
     list-style: none;
