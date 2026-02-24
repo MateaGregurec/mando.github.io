@@ -339,7 +339,7 @@ body{
 .footer_nav h4, .footer_social h4, .footer_contact h4{
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--green);
+    color: var(--accent);
 }
 .footer_nav ul{
     list-style: none;
