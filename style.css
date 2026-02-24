@@ -3,7 +3,7 @@
   --primary: #224C6B;        /*main brand color*/
   --primary-dark: #17364D;   /*navbar scroll, hover, shadows */
   --white: #ffffff;
-  --accent: #FF6F61;         /*CTAs, highlights*/
+  --accent: rgb(0, 189, 0);         /*CTAs, highlights*/
   --teal: #2AB7CA;           /*links, secondary highlights*/
   --teal-dark: #1B8C97;      /*hover links or icons*/
   --silver: #D6D9DB;         /*backgrounds */
@@ -12,7 +12,6 @@
   --gray: #C4C4C4;           /* Divider lines, muted elements */
   --gray-dark: #7A7A7A;      /*Secondary text, muted info */
   --info: #17A2B8;           /* Informational highlights */
-  --green: rgb(0, 189, 0);
 }
 /*all*/      
 *{
